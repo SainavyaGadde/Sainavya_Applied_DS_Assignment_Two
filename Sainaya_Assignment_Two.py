@@ -33,8 +33,8 @@ print(population_years_df)
 print(population_countries_df)
 
 # Exploring the Statistical Properties
-population_years_df.describe
-population_countries_df.describe
+year_stats = population_years_df.describe
+country_stats = population_countries_df.describe
 
 import numpy as np
 year_array = population_years_df.to_numpy()
@@ -49,6 +49,9 @@ population_years_df.nlargest(10, '2020')
 
 # Getting the top 10 lowset countires data population
 population_years_df.nsmallest(10, '2020')
+
+correlation_years = population_years_df.corr()
+print(correlation_years)
 
 population_years_df.info()
 population_countries_df.info()
